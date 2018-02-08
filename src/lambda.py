@@ -170,8 +170,7 @@ def _get_unreserved_unused(now, instances, reserved_instances):
             reserved_instances[matching_reserved_instance] -= 1
     unused_reservations_aggregation = collections.defaultdict(int)
     for ri_type, ri_count in reserved_instances.items():
-        if ri_count > 0:
-            unused_reservations_aggregation[ri_type] += ri_count
+        unused_reservations_aggregation[ri_type] += ri_count
     unreserved_instances_aggregation = collections.defaultdict(int)
     for instance_type in unreserved_instances:
         unreserved_instances_aggregation[instance_type] += 1
